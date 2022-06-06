@@ -27,10 +27,10 @@ $(function() {
 
             const row =
                 `<tr>
-                <th scope="row">${index+1}</th>
-                <td>${element.province}</td>
-                <td>${element.new_case}</td>
-                <td>${element.total_case}</td>
+                <th scope="row">${numberWithCommas(index+1)}</th>
+                <td>${numberWithCommas(element.province)}</td>
+                <td>${numberWithCommas(element.new_case)}</td>
+                <td>${numberWithCommas(element.total_case)}</td>
                 </tr>`
             $("#date2").html("Last Update : " + data2[index].update_date)
             $("#list").append(row)
