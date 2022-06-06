@@ -30,7 +30,7 @@ $(function() {
                 <th scope="row">${index+1}</th>
                 <td>${element.province}</td>
                 <td>${element.new_case}</td>
-                <td>${element.total_casee}</td>
+                <td>${element.total_case}</td>
                 </tr>`
             $("#date2").html("Last Update : " + data2[index].update_date)
             $("#list").append(row)
