@@ -7,8 +7,8 @@ $(function() {
     }
 
     $.get(url, function(data, status) {
-        console.log(data);
-        console.log(status);
+        // console.log(data);
+        // console.log(status);
 
         $("#date").html("Last Update : " + data[0].update_date)
         $("#total_Case").html(numberWithCommas(data[0].total_case))
@@ -18,8 +18,8 @@ $(function() {
     });
 
     $.get(url2, function(data2, status2) {
-        console.log(data2);
-        console.log(status2);
+        // console.log(data2);
+        // console.log(status2);
 
         for (let index = 0; index < data2.length; index++) {
             const element = data2[index];
@@ -32,7 +32,7 @@ $(function() {
                 <td>${element.new_case}</td>
                 <td>${element.total_casee}</td>
                 </tr>`
-
+            $("#date2").html("Last Update : " + data2[index].update_date)
             $("#list").append(row)
         }
 
