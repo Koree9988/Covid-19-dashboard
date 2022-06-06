@@ -1,4 +1,4 @@
-$(function () {
+$(function() {
     const url = "https://covid19.ddc.moph.go.th/api/Cases/today-cases-all"
     const url2 = "https://covid19.ddc.moph.go.th/api/Cases/today-cases-by-provinces"
 
@@ -6,7 +6,7 @@ $(function () {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 
-    $.get(url, function (data, status) {
+    $.get(url, function(data, status) {
         console.log(data);
         console.log(status);
 
@@ -17,20 +17,23 @@ $(function () {
 
     });
 
-    $.get(url2, function (data, status) {
-        console.log(data);
-        console.log(status);
+    $.get(url2, function(data2, status2) {
+        console.log(data2);
+        console.log(status2);
 
-        for (let index = 0; index < data.lenght; index++) {
-            const element = array[index];
+        for (let index = 0; index < data2.length; index++) {
+            const element = data2[index];
+            console.log(data2[0].province);
+
             const row =
                 `<tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>`
+                <th scope="row">${index+1}</th>
+                <td>${element.province}</td>
+                <td>${element.new_case}</td>
+                <td>${element.total_casee}</td>
+                </tr>`
+
+            $("#list").append(row)
         }
 
 
